@@ -1,0 +1,67 @@
+/* Background container */
+.who-container {
+  min-height: 100vh;
+  background-size: cover;        /* make sure background fills screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;       /* center vertically */
+  padding: 5vh 2vw;
+}
+
+/* Title */
+.title-text {
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 3.5rem); /* responsive heading */
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 3rem;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: inline-block;
+}
+
+/* Role Card */
+.watch-card {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.watch-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Role Image */
+.role-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.watch-card:hover .role-img {
+  border: 2px solid white;
+}
+
+/* Role Name */
+.role-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0;
+  display: inline-block;
+}
