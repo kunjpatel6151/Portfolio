@@ -28,7 +28,7 @@ function WhoIsWatching() {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container text-center">
-        <h1 className="mb-5 title-text">Who's Watching?</h1>
+        <h1 className="mb-5 title-text">Identify Yourself</h1>
         <div className="row justify-content-center g-4">
           {roles.map((role, idx) => (
             <div

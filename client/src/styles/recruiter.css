@@ -1,0 +1,649 @@
+/* ============================================
+   RECRUITER PAGE - NETFLIX-STYLE STYLING
+   ============================================ */
+
+:root {
+  --netflix-dark: #141414;
+  --netflix-red: #E50914;
+  --netflix-gray: #221f1f;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--netflix-dark);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   RECRUITER CONTAINER & LAYOUT
+   ============================================ */
+
+.recruiter-container {
+  min-height: 100vh;
+  background-color: var(--netflix-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.recruiter-content {
+  flex: 1;
+  padding: 0;
+  background-color: var(--netflix-dark);
+}
+
+/* ============================================
+   NAVBAR - NETFLIX STYLE (STICKY)
+   ============================================ */
+
+.recruiter-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(229, 9, 20, 0.2);
+  transition: var(--transition);
+}
+
+.recruiter-navbar:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 10%, transparent);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--netflix-red);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.navbar-logo:hover {
+  text-shadow: 0 0 10px var(--netflix-red);
+  transform: scale(1.05);
+}
+
+.navbar-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--netflix-red);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--netflix-red);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   HERO SECTION - VIDEO & OVERLAY
+   ============================================ */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 50px;
+  color: var(--text-primary);
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--netflix-red);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  animation: slideInUp 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   ROW SECTIONS - "MY WEAPONS" & "CONNECT ME"
+   ============================================ */
+
+.row-section {
+  padding: 50px;
+  background-color: var(--netflix-dark);
+}
+
+.row-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.row-title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background-color: var(--netflix-red);
+  border-radius: 2px;
+}
+
+/* ============================================
+   CARDS CONTAINER - MY WEAPONS
+   ============================================ */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(229, 9, 20, 0.4);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--netflix-red);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  animation: slideInUp 0.4s ease-out;
+}
+
+/* ============================================
+   CONNECT CONTAINER - SOCIAL ICONS
+   ============================================ */
+
+.connect-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.connect-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-decoration: none;
+  transition: var(--transition);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--netflix-gray);
+  border: 2px solid transparent;
+}
+
+.connect-icon:hover {
+  border-color: var(--icon-color, var(--netflix-red));
+  transform: scale(1.15) translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 50%;
+  box-shadow: none;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.connect-icon:hover .icon-wrapper {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 12px 24px var(--icon-color, var(--netflix-red));
+}
+
+.icon-emoji {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image icons inside connect buttons */
+.icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.icon-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0;
+  transition: var(--transition);
+  opacity: 0;
+}
+
+.connect-icon:hover .icon-label {
+  opacity: 1;
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* ============================================
+   FOOTER - NETFLIX STYLE
+   ============================================ */
+
+.recruiter-footer {
+  background-color: var(--netflix-gray);
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(229, 9, 20, 0.2);
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--netflix-red);
+  margin: 0;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--netflix-red);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .recruiter-navbar {
+    padding: 12px 30px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-right {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .row-section {
+    padding: 40px 30px;
+  }
+
+  .row-title {
+    font-size: 24px;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    height: 250px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .connect-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+  }
+
+  .connect-icon {
+    padding: 15px;
+  }
+
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-emoji {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recruiter-navbar {
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar-right {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .hero-section {
+    height: 50vh;
+  }
+
+  .hero-content {
+    padding: 30px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .row-section {
+    padding: 30px 20px;
+  }
+
+  .row-title {
+    font-size: 20px;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .card {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .connect-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+
+  .connect-icon {
+    padding: 10px;
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-emoji {
+    font-size: 28px;
+  }
+
+  .icon-label {
+    font-size: 12px;
+  }
+
+  .recruiter-footer {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruiter-navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .hero-section {
+    height: 40vh;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .row-section {
+    padding: 20px 15px;
+  }
+
+  .row-title {
+    font-size: 18px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    height: 180px;
+  }
+
+  .connect-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .connect-icon {
+    padding: 8px;
+  }
+
+  .icon-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .icon-emoji {
+    font-size: 24px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+}
