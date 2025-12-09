@@ -4,7 +4,7 @@ import Recruiter from "./components/Recruiter";
 import Developer from "./components/Developer";
 import Stalker from "./components/Stalker";
 import Beginner from "./components/Beginner";
-import Admin from "./components/Admin";
+import AdminPanel from "./components/admin/AdminPanel";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/developer" element={<Developer />} />
         <Route path="/stalker" element={<Stalker />} />
         <Route path="/beginner" element={<Beginner />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/*" element={<AdminPanel />} />
       </Routes>
     </Router>
   );

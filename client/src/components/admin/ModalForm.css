@@ -1,0 +1,100 @@
+/* Bootstrap Modal Customizations */
+
+.admin-modal .modal-content {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.admin-modal .modal-header {
+  background: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+  padding: 16px 24px;
+}
+
+.admin-modal .modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292e;
+}
+
+.admin-modal .modal-header .btn-close {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.admin-modal .modal-header .btn-close:hover {
+  opacity: 0.8;
+}
+
+.admin-modal .modal-body {
+  padding: 24px;
+}
+
+.admin-modal .form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #24292e;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-modal .form-control,
+.admin-modal .form-select {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+.admin-modal .form-control:focus,
+.admin-modal .form-select:focus {
+  border-color: #0366d6;
+  box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+  color: #24292e;
+}
+
+.admin-modal .modal-footer {
+  background: #f6f8fa;
+  border-top: 1px solid #e1e4e8;
+  padding: 16px 24px;
+}
+
+.admin-modal .btn-primary {
+  background: #28a745;
+  border-color: #27ae60;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.admin-modal .btn-primary:hover:not(:disabled) {
+  background: #27ae60;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.admin-modal .btn-primary:disabled {
+  background: #ccc;
+  border-color: #999;
+}
+
+.admin-modal .btn-secondary {
+  background: white;
+  border-color: #e1e4e8;
+  color: #24292e;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.admin-modal .btn-secondary:hover:not(:disabled) {
+  background: #f6f8fa;
+  border-color: #d1d5da;
+}
