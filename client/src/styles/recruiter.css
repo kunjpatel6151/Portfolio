@@ -2,7 +2,7 @@
    RECRUITER PAGE - NETFLIX-STYLE STYLING
    ============================================ */
 
-:root {
+.recruiter-container {
   --netflix-dark: #141414;
   --netflix-red: #E50914;
   --netflix-gray: #221f1f;
@@ -11,26 +11,17 @@
   --transition: all 0.3s ease;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/* Only apply global styles to recruiter container */
+.recruiter-container * {
   box-sizing: border-box;
 }
 
-html, body {
+.recruiter-container {
   background-color: var(--netflix-dark);
   color: var(--text-primary);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
-}
-
-/* ============================================
-   RECRUITER CONTAINER & LAYOUT
-   ============================================ */
-
-.recruiter-container {
   min-height: 100vh;
-  background-color: var(--netflix-dark);
   display: flex;
   flex-direction: column;
 }
